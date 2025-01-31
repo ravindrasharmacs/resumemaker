@@ -1,11 +1,11 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check, CreditCard, Palette as Paypal, Bitcoin } from 'lucide-react';
 
 export function Pricing() {
   const plans = [
     {
       name: 'Free',
-      price: '$0',
+      price: '₹9',
       period: 'forever',
       description: 'Perfect for trying out our features',
       features: [
@@ -20,8 +20,8 @@ export function Pricing() {
     },
     {
       name: 'Pro',
-      price: '$12',
-      period: 'per month',
+      price: '₹29',
+      period: 'per resume',
       description: 'Everything you need for job hunting',
       features: [
         'All Free features',
@@ -37,8 +37,8 @@ export function Pricing() {
     },
     {
       name: 'Enterprise',
-      price: '$29',
-      period: 'per month',
+      price: '₹49',
+      period: 'per resume',
       description: 'For teams and organizations',
       features: [
         'All Pro features',
@@ -54,6 +54,24 @@ export function Pricing() {
     }
   ];
 
+  const paymentMethods = [
+    {
+      icon: <CreditCard className="h-6 w-6" />,
+      name: 'YES Bank IFSC: YESB0000014',
+      description: 'Ravindra Kumar Sharma.A/c no.-001451100002714'
+    },
+    {
+      icon: <Paypal className="h-6 w-6" />,
+      name: 'PayPal',
+      description: '@RavindraSharmaPaypal'
+    },
+    {
+      icon: <UPI className="h-6 w-6" />,
+      name: 'UPI ID:',
+      description: '8588099708@ybl'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +84,7 @@ export function Pricing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -105,6 +123,28 @@ export function Pricing() {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Payment Methods Section */}
+        <div className="bg-white rounded-xl p-8 mb-16">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Secure Payment Methods</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {paymentMethods.map((method, index) => (
+              <div key={index} className="flex items-start space-x-4 p-6 rounded-lg bg-gray-50">
+                <div className="bg-blue-100 p-3 rounded-lg">
+                  {method.icon}
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">{method.name}</h4>
+                  <p className="text-sm text-gray-600">{method.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center text-sm text-gray-600">
+            <p>All payments are processed securely through our PCI-compliant payment gateway.</p>
+            <p className="mt-2">30-day money-back guarantee for all paid plans.</p>
+          </div>
         </div>
 
         <div className="mt-20 text-center">

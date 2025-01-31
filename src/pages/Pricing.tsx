@@ -57,18 +57,18 @@ export function Pricing() {
   const paymentMethods = [
     {
       icon: <CreditCard className="h-6 w-6" />,
-      name: 'YES Bank IFSC: YESB0000014',
-      description: 'Ravindra Kumar Sharma.A/c no.-001451100002714'
+      name: 'Credit card',
+      description: 'Pay via credit card'
     },
     {
       icon: <Paypal className="h-6 w-6" />,
       name: 'PayPal',
-      description: '@RavindraSharmaPaypal'
+      description: 'Pay via PayPal'
     },
     {
       icon: <UPI className="h-6 w-6" />,
       name: 'UPI ID:',
-      description: '8588099708@ybl'
+      description: 'Pay via UPI payment gateway'
     }
   ];
 
